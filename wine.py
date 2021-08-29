@@ -9,17 +9,15 @@ while passenger_count < 20:
         break
     elif age < 18:
         children_count =+ 1
-    else:
-        adult_count += 1
-    passenger_count += 1
+        passenger_count += 1
+        continue
     print("Podaj liczbę lampek wina: ")
     wine_current = int(input())
-    if wine_current > 3:
+    if wine_current > 3 or wine_current < 0:
         print("Nieprawidlowa liczba lampek wina")
-    elif wine_current < 0:
-        print("Nieprawidlowa liczba lampek wina")
-    else:
-        wine_count += wine_current
+        continue
+    wine_count += wine_current
+    adult_count += 1
 print("Dorosłych: {}, Dzieci: {}, lampek wina: {}, Przychód: {}".format(
     adult_count,
     children_count,
